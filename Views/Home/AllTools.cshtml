@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/alltools.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+<div class = "AllToolsHeader">
+    <h1> All Tools </h1>
+</div>
+
+<div class = "ToolContainer">
+@foreach(var tool in ViewBag.AllTools)
+{
+    <div class = "OneTool">
+                    <h4>@{
+            var base64 = Convert.ToBase64String(@tool.ToolImage1);
+            var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+        }
+        <img id = "ToolImage" src="@imgSrc"/>
+<h4>Tool: @tool.ToolName </h4>
+<h4>Description: @tool.Description</h4>
+<h4>Rntr: @tool.Owner.FirstName @tool.Owner.LastName </h4>
+<h4><a href = "viewTool/@tool.ToolId">View Tool details</a></h4>
+</div>
+}
+
+</div>
+
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a><h3>
+    </div>
+
+<div class = "back">
+<h3> <a href = "/Dashboard">Back</a><h3>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.header {
+    text-align:center;
+    font-family: 'Biryani', sans-serif;
+    color:#FFFCF9
+}
+
+.ToolContainer h2{
+    border: 1px dashed red;
+}
+
+.ToolContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.OneTool {
+    display: inline-block;
+    flex-flow: column;
+    align-content: center;
+    width: 300px;
+    height: 300px;
+    color: #cdd5d1;
+    border: 5px solid #cdd5d1;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.OneTool img{
+    border: 5px solid red;
+    border-radius: 20px;
+    border-color: #cdd5d1;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#ToolImage {
+    height:100px;
+    width: 100px;
+    display:flex;
+}
+
+form {
+    border-radius: 20px;
+    color: #946E83;
+    height: 15%;
+}
+
+form input{
+    height:100%;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 14pt;
+}

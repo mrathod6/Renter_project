@@ -1,0 +1,87 @@
+@model User
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/dashboard.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class = "headercontainer">
+        <div class = "welcomemessage">
+                        @if(@ViewBag.LoggedInUser.UserPhoto != null)
+            {
+                <img src = "@ViewBag.ImageData"/>
+            }
+            <h1>Hey @ViewBag.LoggedInUser.FirstName! Welcome to your dashboard!
+                <br>
+                @if(@ViewBag.LoggedInUser.UserPhoto == null)
+            {
+                <h2><a href = "/addprofilepicture"> Add your profile picture here</a></h2>
+            }
+            </h1>
+        </div>
+        </div>
+
+
+
+
+        <div class = "myprofilelink">
+<h1><a href = "/myprofile">My Profile</a></h1>
+    </div>
+
+<br>
+<div class = "navbarcontainer">
+
+<div class = "navbar">
+<h3> <a href = "/addtool">Add a tool..</a><h3>
+<h3> <a href = "/alltools">All Tools...</a><h3>
+<h3> <a href = "/rentatool">Rent A Tool...</a><h3>
+<h3> <a href = "/myrentals">MyRentals</a><h3></h3>
+<h3><a href = "/requests">Rental Requests</a></h3>
+</div>
+
+<div class = "explanation">
+    <h3>Welcome to Rntr, This site was created to provide users a platform to rent tools from one another.</h3>
+    <br>
+    <h4> Below you will see all the tools available </h4>
+    <br>
+    <h3>Using the navigation bar on the left you can:</h3>
+        <ul>
+            <li><h4> View all the tools available to you </h4></li>
+            <li><h4> Add a tool you want to rent out </h4></li>
+            <li><h4> Make requests to rent a tool from another user in 'Rent A Tool' </h4></li>
+            <li><h4> Keep track of your current rentals under 'My Rentals' </h4></li>
+            <li><h4> Check if anyone has made a request for any of your tools under 'Rental Requests' </h4></li>
+        </ul>
+        </div>
+</div>
+
+<div class = "AllToolsHeader">
+    <h1> All Tools </h1>
+</div>
+
+<div class = "ToolContainer">
+    @foreach(var x in ViewBag.AllTools){
+        <div class = "OneTool">
+                    <h4>@{
+            var base64 = Convert.ToBase64String(@x.ToolImage1);
+            var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+        }
+        <img id = "ToolImage" src="@imgSrc"/>
+            </h4>
+        <h4>@x.ToolName</h4>
+        <h4>@x.Description</h4>
+        </div>
+    }
+</div>
+
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a><h3>
+</div>
+
+</body>
+
+</html>

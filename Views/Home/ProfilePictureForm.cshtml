@@ -1,0 +1,44 @@
+@model User
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/profilepictureform.css"/>
+<link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet"></head>
+    <body>
+
+    <div class = "profilepicturecontainer">
+
+        <div class = "header">
+
+            <h1> Add your profile picture </h1>
+
+                <div class = "forminputs">
+                    <form action="profilepictureprocess" method="Post" enctype = "multipart/form-data">
+                        <h2> Select a file: </h2>
+                <br>
+                        <input type ="file" name = "ProfilePicture">
+                        <span asp-validation-for="UserPhoto"></span>
+                <br>
+                <div class = "formbutton">
+                    <input type = "submit">
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+<div class = "bottomlinkscontainer">
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a></h3>
+</div>
+
+<div class = "back">
+<h3> <a href = "Dashboard">Back</a></h3>
+</div>
+</div>
+
+
+</body>
+</html>

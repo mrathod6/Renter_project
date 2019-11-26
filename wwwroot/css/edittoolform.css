@@ -1,0 +1,101 @@
+.header {
+    color: #d0ceba;
+    text-align: center;
+}
+
+.ToolContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    text-align: center;
+    }
+
+.OneTool {
+    display: inline-block;
+    flex-flow: column;
+    align-content: center;
+    width: 250px;
+    height: 250px;
+    color: #cdd5d1;
+    border: 5px solid #cdd5d1;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.OneTool img{
+    border-radius: 20px;
+    border-color: #cdd5d1;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#ToolImage {
+    height:100px;
+    width: 100px;
+    display:flex;
+}
+
+.edittoolcontainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height:100%;
+    width: 100%
+}
+
+.edittoolform{
+    border: 5px solid #d0ceba;
+    background-color: #4B3F72;
+    display: flex;
+    flex-direction: column;
+    color: #b1ede8;
+    padding: 1%;
+    border-radius: 25px;
+}
+
+.edittoolform > h2{
+    display: flex;
+    justify-content: center;
+    color: #946E83;
+    font-size: 32pt;
+}
+
+.forminputs{
+    display: flex;
+    justify-content: inherit;
+    color: #E9D2C0;
+    font-size: 16pt;
+}
+
+.formbutton{
+    display: flex;
+    justify-content: center;
+    color: #946E83;
+    height:100%;
+}
+
+.formbutton>input{
+    height:100%;
+    width: 50%;
+    font-size: 15pt;
+}
+
+input {
+    border-radius: 20px;
+    height:25%;
+    text-align: center;
+}
+
+label{
+    display:flex;
+    justify-content: center;
+}
+
+#ToolImage1{
+    visibility:hidden;
+}
+
+span {
+    color: red;
+}

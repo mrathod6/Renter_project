@@ -1,0 +1,69 @@
+@model Tool
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/edittoolform.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+            <div class = "header">
+                <h1> Hey @ViewBag.LoggedInUser.FirstName, Edit your tool on this page </h1>
+            </div>
+
+<div class = "ToolContainer">
+    <div class = "OneTool">
+                        <h4>@{
+                var base64 = Convert.ToBase64String(@ViewBag.ThisTool.ToolImage1);
+                var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+            }
+            <img id = "ToolImage" src="@imgSrc"/>
+<h4>Tool: @ViewBag.ThisTool.ToolName </h4>
+<h4>Description: @ViewBag.ThisTool.Description </h4>
+
+    </div>
+}
+</div>
+
+    <div class = "edittoolcontainer">
+        <div class = "edittoolform">
+                <h2> Edit Tool </h2>
+                    <br>
+                    <div class = "forminputs">
+                        <asp-form action="/edittoolprocess/@ViewBag.thisTool.ToolId" method="Post" enctype ="multipart/form-data">
+                            <label asp-for="ToolName"></label>
+                            <input asp-for="ToolName">
+                            <span asp-validation-for="ToolName"></span>
+                            <br>
+                            <br>
+                            <label asp-for="Description"></label>
+                            <input asp-for="Description">
+                            <span asp-validation-for="Description"></span>
+                            <br>
+                            <br>
+                            </div>
+                            <label id = "ToolImage1" asp-for="ToolImage1"></label>
+                            <input type ="file" name = "toolimage">
+                            <span asp-validation-for="ToolImage1"></span>
+                            <br>
+                            <br>
+                            <div class = "formbutton">
+                            <input type="submit" value="Edit Tool!">
+                            </div>
+                        </asp-form>
+                    </div>
+        </div>
+
+<div class = "logout">
+<h3><a href = "/logout">Logout</a><h3>
+</div>
+
+<div class = "back">
+<h3><a href = "/editmytools">Back</a><h3></h3>
+</div>
+
+</body>
+
+</html>

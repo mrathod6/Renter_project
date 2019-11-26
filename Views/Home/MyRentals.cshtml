@@ -1,0 +1,45 @@
+@model Rntr.Models.Rental
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/MyRental.css"/>
+<link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet"></head>
+    <body>
+        <div class = "header">
+            <h2> My Rentals </h2>
+            <h2> These are your current rentals, if you requested a rental it will show up on this page once it has been accepted </h2>
+        </div>
+
+        <div class = "ToolContainer">
+            @foreach(var Rental in ViewBag.AllRentals)
+            {
+                <div class = "OneTool">
+                    <h4> @{
+                            var base64 = Convert.ToBase64String(@Rental.ToolRented.ToolImage1);
+                            var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+                            }
+                            <img id = "ToolImage" src="@imgSrc"/>
+                    </h4>
+                    <h4>Tool: @Rental.ToolRented.ToolName </h4>
+                    <h4>Rentee: @Rental.Rentee.FirstName </h4>
+                    <h4>Owner: @Rental.ToolRented.Owner.FirstName</h4>
+                        <form action="/returnprocess/@Rental.RentalId/@Rental.ToolId" method="Post">
+                            <input type="submit" value="Return this tool!">
+                        </form>
+                </div>
+            }
+        </div>
+
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a><h3>
+</div>
+
+<div class = "back">
+<h3> <a href = "/dashboard">Back</a><h3>
+</div>
+
+</body>
+
+</html>

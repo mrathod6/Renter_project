@@ -1,0 +1,68 @@
+@model Rntr.Models.User
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/editmyprofile.css"/>
+<link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet"></head>
+    <body>
+        <div class = "headercontainer">
+            <div class = "header">
+                <h1> Edit your profile details </h1>
+            </div>
+        </div>
+
+        <div class = "editcontainer">
+            <div class = "editform">
+                <h2> Edit Profile </h2>
+                <br>
+                <div class = "forminputs">
+                    <form action="editmyprofileprocess" method="Post" enctype = "multipart/form-data">
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName"/>
+                            <span asp-validation-for="FirstName"></span>
+                            <br>
+                            <br>
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName">
+                            <span asp-validation-for="LastName"></span>
+                            <br>
+                            <br>
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email">
+                            <span asp-validation-for="Email"></span>
+                            <br>
+                            <br>
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password">
+                            <span asp-validation-for="Password"></span>
+                            <br>
+                            <br>
+                            <label asp-for="ConfirmPassword"></label>
+                            <input asp-for="ConfirmPassword">
+                            <span asp-validation-for="ConfirmPassword"></span>
+                            </div>
+                            <br>
+                            <br>
+                            <h3> Change your profile picture </h3> <input type ="file" name = "ProfilePicture">
+                            <br>
+                            <br>
+                            <div class = "formbutton">
+                        <input type="submit" value="Edit">
+                        </div>
+                    </form>
+                </div>
+        </div>
+
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a><h3>
+</div>
+
+<div class = "back">
+<h3> <a href = "/myprofile">Back</a><h3>
+</div>
+
+</body>
+
+</html>

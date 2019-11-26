@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rntr</title>
+        <link rel="stylesheet" href="~/css/requests.css"/>
+<link href="https://fonts.googleapis.com/css?family=Biryani:900&display=swap" rel="stylesheet"></head>
+    <body>
+        <div class = "header">
+<h1> Here you will see all the requests people have made to rent your tools </h1>
+        </div>
+
+            <div class = "ToolContainer">
+                @foreach(var requests in ViewBag.AllRequests)
+                {
+                    <div class = "OneTool">
+                        <h4> @{
+                            var base64 = Convert.ToBase64String(@requests.ToolRented.ToolImage1);
+                            var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+                            }
+                            <img id = "ToolImage" src="@imgSrc"/>
+                        </h4>
+                        <h4>Tool: @requests.ToolRented.ToolName </h4>
+                        <h4>Rentee: @requests.Rentee.FirstName</h4>
+                        <form action="/acceptrentalprocess/@requests.ToolId" method="Post">
+                            <input type="submit" value="Accept Rental Request!">
+                        </form>
+                    </div>
+                }
+            </div>
+
+<div class = "logout">
+<h3> <a href = "/logout">Logout</a><h3>
+</div>
+
+<div class = "back">
+<h3> <a href = "/dashboard">Back</a><h3>
+</div>
+
+</body>
+
+</html>

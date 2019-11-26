@@ -1,0 +1,71 @@
+.headercontainer{
+    display: flex;
+    color: #d0ceba;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: baseline;
+}
+
+.addtoolcontainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height:100%;
+    width: 100%
+}
+
+.addtoolform{
+    border: 5px solid #d0ceba;
+    background-color: #4B3F72;
+    display: flex;
+    flex-direction: column;
+    color: #b1ede8;
+    padding: 1%;
+    border-radius: 25px;
+}
+
+.addtoolform > h2{
+    display: flex;
+    justify-content: center;
+    color: #946E83;
+    font-size: 32pt;
+}
+
+.forminputs{
+    display: flex;
+    justify-content: inherit;
+    color: #E9D2C0;
+    font-size: 16pt;
+}
+.formbutton{
+    display: flex;
+    justify-content: center;
+    color: #946E83;
+    height:100%;
+}
+
+.formbutton>input{
+    height:100%;
+    width: 50%;
+    font-size: 15pt;
+}
+
+input {
+    border-radius: 20px;
+    height:30%;
+    text-align: center;
+}
+
+label{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+span {
+    color: red;
+}
